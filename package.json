@@ -1,0 +1,40 @@
+{
+  "name": "sequence-aligner",
+  "version": "1.0.0",
+  "description": "README",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=\"production\"",
+    "build:dev": "webpack -w",
+    "start": "node main.js",
+    "start:dev": "npm run build:dev & npm run start:server",
+    "start:server": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoegreene/sequence-aligner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zoegreene/sequence-aligner/issues"
+  },
+  "homepage": "https://github.com/zoegreene/sequence-aligner#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "nodemon": "^2.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hook-form": "^6.14.1",
+    "webpack": "^5.12.2",
+    "webpack-cli": "^4.3.1"
+  }
+}
