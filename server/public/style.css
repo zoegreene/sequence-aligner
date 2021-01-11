@@ -1,0 +1,69 @@
+/* NAVBAR */
+#page-title {
+  font-family: 'Red Hat Display', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* INPUT SECTION */
+.entry-box {
+  font-family: 'Red Hat Display', sans-serif;
+  background-color: #FCAF58;
+  border-radius: 10px;
+  margin: 2rem 30rem 2rem 30rem;
+  padding: 2rem;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 1rem 1rem 1rem;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  resize: vertical;
+  width: 22rem;
+  padding: 1rem;
+  font-family: 'Courier Prime', monospace;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #4e598c;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.btn:hover {
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  color: #4e598c;
+}
+
+/* RESULTS SECTION */
+.results-box {
+  font-family: 'Red Hat Display', sans-serif;
+  background-color: #4e598c;
+  color: white;
+  border-radius: 10px;
+  margin: 2rem 30rem 2rem 30rem;
+  padding: 2rem;
+}
+
+.seq-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Courier Prime', monospace;
+  padding: 0rem;
+}

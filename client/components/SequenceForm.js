@@ -15,19 +15,19 @@ const SequenceForm = () => {
   }
 
   return (
-    <div id="center-page">
-      <h2>Enter sequences to get started:</h2>
-      <form className="sequence-form" onSubmit={ handleSubmit(onSubmit) }>
-        <div className="form-item">
-          <label htmlFor="seq1">Sequence 1</label>
-          <input name="seq1" ref={ register({ required: true }) } />
-        </div>
-        <div className="form-item">
-          <label htmlFor="seq2">Sequence 2</label>
-          <input name="seq2" ref={ register({ required: true })} />
-        </div>
-        <button type="submit" className="btn">ALIGN SEQUENCES</button>
-      </form>
+    <div>
+      <div className="entry-box">
+        <h2>Enter sequences to get started:</h2>
+        <form className="sequence-form" onSubmit={ handleSubmit(onSubmit) }>
+          <div className="form-box">
+            <input name="seq1" type="text" placeholder="First sequence..." ref={ register({ required: true }) } />
+            <input name="seq2" type="text" placeholder="Second sequence..." ref={ register({ required: true })} />
+          </div>
+          <div className="btn-box">
+            <button type="submit" className="btn">ALIGN SEQUENCES</button>
+          </div>
+        </form>
+      </div>
       { results.match && <ResultsCard results={ results } /> }
     </div>
   )

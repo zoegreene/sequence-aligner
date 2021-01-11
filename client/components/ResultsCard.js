@@ -2,11 +2,13 @@ import React from 'react';
 
 const ResultsCard = ({ results }) => {
   return (
-    <div>
-      <h1>Results Card</h1>
-      <h4>{ results.seq1 }</h4>
-      <h4>{ results.seq2 }</h4>
-      <h4>{ results.match * 100 }%</h4>
+    <div className="results-box">
+      <h2>Alignment results:</h2>
+      <h4>Match accuracy: { results.match * 100 }%</h4>
+      <div className="seq-results">
+        <p>{ results.seq1 }</p>
+        <p>{ results.seq2 }</p>
+      </div>
     </div>
   )
 }

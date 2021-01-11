@@ -4,7 +4,7 @@ import SequenceForm from './SequenceForm';
 const App = () => {
 	return (
 		<div>
-			<h1>Sequence Aligner Wizard</h1>
+			<h1 id="page-title">SEQUENCE ALIGNER WIZARD</h1>
 			<SequenceForm />
 		</div>
 
