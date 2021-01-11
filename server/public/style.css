@@ -42,6 +42,7 @@ input {
   border-radius: 10px;
   cursor: pointer;
   padding: 0.5rem;
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 .btn:hover {
