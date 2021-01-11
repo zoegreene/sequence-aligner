@@ -1,3 +1,4 @@
 node_modules
-server/public/bundle.js
-
+server/public/*.js*
+server/public/*.txt
+.DS_Store
