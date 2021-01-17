@@ -28,6 +28,7 @@ input {
   resize: vertical;
   width: 22rem;
   padding: 1rem;
+  margin: 1rem;
   font-family: 'Courier Prime', monospace;
 }
 

@@ -9,7 +9,6 @@ const SequenceForm = () => {
 
   const onSubmit = data => {
     results = alignSeqs(data);
-    console.log('results', results);
     setResults(results);
     reset();
   }
