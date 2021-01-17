@@ -1,13 +1,16 @@
 import React from 'react';
-import SequenceForm from './SequenceForm';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import History from './History';
 
 const App = () => {
 	return (
-		<div>
-			<h1 id="page-title">SEQUENCE ALIGNER WIZARD</h1>
-			<SequenceForm />
-		</div>
-
+		<Router>
+			<Switch>
+				<Route exact path="/history" component={ History } />
+				<Route path="/" component={ Home } />
+			</Switch>
+		</Router>
 	)
 }
 

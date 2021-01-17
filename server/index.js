@@ -9,9 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './public')));
 app.use(morgan('dev'));
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, './public/index.html'));
-// });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'));
+});
 
 //404 handler
 app.use((req, res, next) => {

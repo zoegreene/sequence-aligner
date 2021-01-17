@@ -69,3 +69,15 @@ input {
   font-family: 'Courier Prime', monospace;
   padding: 0rem;
 }
+
+/* HISTORY BUTTON */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.history-btn {
+  display: flex;
+  justify-content: center;
+}
