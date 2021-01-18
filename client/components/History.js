@@ -22,7 +22,6 @@ const History = () => {
       <div className="history-btn">
         <button className="btn"><Link to="/">BACK</Link></button>
       </div>
-      {console.log(history)}
       { history.length > 0 ?
         history.map(alignment => {
           return (

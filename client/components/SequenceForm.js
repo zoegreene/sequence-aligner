@@ -8,7 +8,6 @@ import { getCookieValue } from '../../server/utils';
 const SequenceForm = () => {
   const { register, handleSubmit, reset } = useForm();
   let [results, setResults] = useState({});
-  // let [sessionId, setSessionId] = useState(0);
 
   useEffect( async () => {
     const sessionId = getCookieValue('sessionId');
@@ -19,7 +18,6 @@ const SequenceForm = () => {
 
   const onSubmit = async (data) => {
     results = alignSeqs(data);
-    console.log(results);
     setResults(results);
     reset();
     const sessionId = getCookieValue('sessionId');
@@ -40,7 +38,7 @@ const SequenceForm = () => {
           </div>
         </form>
       </div>
-      { results.match && <ResultsCard results={ results } /> }
+      { results.match >= 0 && <ResultsCard results={ results } /> }
     </div>
   )
 }

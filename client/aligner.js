@@ -27,24 +27,38 @@ const alignSeqs = ({ seq1, seq2 }) => {
 
   const numMutations = matrix[seq2.length][seq1.length];
 
-  let newSeq = '';
+  const newSeq = generateSequence(seq1, seq2, matrix);
+  const match = seq1.length - numMutations <= 0 ? 0 : (seq1.length - numMutations) / seq1.length;
+
+  return { seq1, seq2, newSeq, match, numMutations };
+}
+
+const generateSequence = (seq1, seq2, matrix) => {
   let r = seq2.length;
   let c = seq1.length;
+  let newSeq = '';
+
   while (r > 0 || c > 0) {
-    if (matrix[r - 1][c - 1] <= matrix[r - 1][c] && matrix[r - 1][c - 1] <= matrix[r][c - 1]) {
+    const align = r > 0 && c > 0 ? matrix[r - 1][c - 1] : Infinity;
+    const insert = c > 0 ? matrix[r][c - 1] : Infinity;
+    const remove = r > 0 ? matrix[r - 1][c] : Infinity;
+
+    if (align <= insert && align <= remove) {
       seq1[c - 1] === seq2[r - 1] ? newSeq = seq1[c - 1] + newSeq : newSeq = `[${seq1[c - 1]}]` + newSeq;
       r--;
       c--;
-    } else if (matrix[r - 1][c] <= matrix[r][c - 1]) {
+    } else if (remove <= insert) {
       newSeq = '[X]' + newSeq;
       r--;
-    } else if (matrix[r - 1][c] > matrix[r][c - 1]) {
+    } else if (insert < remove) {
       newSeq = '[_]' + newSeq;
+      c--;
+    } else {
+      r--;
       c--;
     }
   }
-
-  return { seq1, seq2, newSeq, match: (seq1.length - numMutations) / seq1.length, numMutations };
+  return newSeq;
 }
 
 export default alignSeqs;
