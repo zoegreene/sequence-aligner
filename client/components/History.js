@@ -22,13 +22,14 @@ const History = () => {
       <div className="history-btn">
         <button className="btn"><Link to="/">BACK</Link></button>
       </div>
+      {console.log(history)}
       { history.length > 0 ?
         history.map(alignment => {
           return (
             <ResultsCard results={ alignment } key={ alignment.seq1 } />
           )
         }) :
-        <div>No alignments found.</div>
+        <h3 className="hint">No alignments found.</h3>
       }
     </div>
   )

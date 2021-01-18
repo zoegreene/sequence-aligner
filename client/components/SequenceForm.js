@@ -19,6 +19,7 @@ const SequenceForm = () => {
 
   const onSubmit = async (data) => {
     results = alignSeqs(data);
+    console.log(results);
     setResults(results);
     reset();
     const sessionId = getCookieValue('sessionId');

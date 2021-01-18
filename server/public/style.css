@@ -81,3 +81,9 @@ a {
   display: flex;
   justify-content: center;
 }
+
+.hint {
+  display: flex;
+  justify-content: center;
+  font-family: 'Red Hat Display', sans-serif;
+}
