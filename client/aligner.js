@@ -44,7 +44,7 @@ const alignSeqs = ({ seq1, seq2 }) => {
     }
   }
 
-  return { seq1, seq2, newSeq, match: (seq1.length - numMutations) / seq1.length };
+  return { seq1, seq2, newSeq, match: (seq1.length - numMutations) / seq1.length, numMutations };
 }
 
 export default alignSeqs;

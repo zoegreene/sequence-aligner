@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 import alignSeqs from '../aligner';
 import ResultsCard from './ResultsCard';
+import { getCookieValue } from '../../server/utils';
 
 const SequenceForm = () => {
   const { register, handleSubmit, reset } = useForm();
   let [results, setResults] = useState({});
+  // let [sessionId, setSessionId] = useState(0);
 
-  const onSubmit = data => {
+  useEffect( async () => {
+    const sessionId = getCookieValue('sessionId');
+    if (!sessionId) {
+      await axios.post('/api/sessions');
+    }
+  });
+
+  const onSubmit = async (data) => {
     results = alignSeqs(data);
     setResults(results);
     reset();
+    const sessionId = getCookieValue('sessionId');
+    await axios.post(`/api/sessions/${sessionId}/alignments`, results);
   }
 
   return (
