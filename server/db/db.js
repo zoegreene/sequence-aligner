@@ -1,3 +1,6 @@
+const pg = require('pg');
+pg.defaults.ssl = true;
+
 const Sequelize = require('sequelize');
 
 const db = new Sequelize (
