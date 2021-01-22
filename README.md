@@ -1,5 +1,7 @@
 # Sequence Alignment Wizard
 
+https://sequence-aligner-wizard.herokuapp.com/
+
 ## Introduction
 Simple app to align two sequences. Created with PostgreSQL, Node.js, Express, and React and using the Needleman-Wunsch algorithm for alignment.
 
@@ -16,6 +18,5 @@ NPM scripts:
 - Start the server in dev mode: npm run start:dev
 
 ## In Progress & Next Steps:
-- Deploy to Heroku
 - Align 3+ sequences
 - Show all possible alignments and their % matches
