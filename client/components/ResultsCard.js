@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ResultsCard = ({ results }) => {
   return (
@@ -13,5 +14,14 @@ const ResultsCard = ({ results }) => {
     </div>
   )
 }
+
+ResultsCard.propTypes = {
+  results: PropTypes.shape({
+    match: PropTypes.number,
+    seq1: PropTypes.string,
+    seq2: PropTypes.string,
+    newSeq: PropTypes.string
+  })
+};
 
 export default ResultsCard;
