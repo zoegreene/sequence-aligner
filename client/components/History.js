@@ -4,6 +4,12 @@ import axios from 'axios';
 import { getCookieValue } from '../../server/utils';
 import ResultsCard from './ResultsCard';
 
+/**
+ * History component maps all of the ResultsCards for a given session.
+ * If there were no results for the session, displays text "No alignments found."
+ *
+ * @return {*}
+ */
 const History = () => {
   let [history, setHistory] = useState([]);
 

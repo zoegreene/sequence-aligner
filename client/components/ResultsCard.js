@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Displays a purple card containing the results from the alignment.
+ *
+ * @param {*} { results } - Object includes the original two sequences,
+ * the aligned second sequence, and the % match.
+ * @return {*}
+ */
 const ResultsCard = ({ results }) => {
   return (
     <div className="results-box">

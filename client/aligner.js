@@ -1,4 +1,12 @@
-// O(N * M) time and space complexity
+/**
+ * alignSeqs performs the hard job of this app. Uses a dynamic programming approach
+ * / the Needleman-Wunsch algorithm to find the closest possible alignment of seq2 to seq1.
+ * Here, closest possible alignment means the fewest mutations (insertion, deletion, substitution).
+ * O(N * M) time and space complexity.
+ *
+ * @param {*} { seq1, seq2 } - The two sequences to be aligned.
+ * @return {*}
+ */
 const alignSeqs = ({ seq1, seq2 }) => {
   seq1 = seq1.toUpperCase();
   seq2 = seq2.toUpperCase();
@@ -33,6 +41,17 @@ const alignSeqs = ({ seq1, seq2 }) => {
   return { seq1, seq2, newSeq, match, numMutations };
 }
 
+/**
+ * Generates an edited second sequence string from the alignment matrix where
+ * [X] - Deleted character
+ * [_] - Inserted space
+ * [A] - Inserted character
+ *
+ * @param {*} seq1 - The first sequence.
+ * @param {*} seq2 - The second sequence.
+ * @param {*} matrix - Grid containing the # of mutations at each step through the seqs.
+ * @return {*} - The edited second sequence.
+ */
 const generateSequence = (seq1, seq2, matrix) => {
   let r = seq2.length;
   let c = seq1.length;

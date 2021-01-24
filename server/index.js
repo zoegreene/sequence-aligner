@@ -18,14 +18,14 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
-//404 handler
+// 404 handler
 app.use((req, res, next) => {
   const error = Error(`Page not found (${req.url})`);
   error.status = 404;
   next(error);
 });
 
-//500 handler
+// 500 handler
 app.use((err, req, res, next) => {
   console.log(err, err.stack);
   res.status(err.status || 500).send(err.message || 'Internal Server Error');

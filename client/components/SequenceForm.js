@@ -5,6 +5,12 @@ import alignSeqs from '../aligner';
 import ResultsCard from './ResultsCard';
 import { getCookieValue } from '../../server/utils';
 
+/**
+ * SequenceForm component displays orange entry box with text entry for two
+ * sequences and submit button.
+ *
+ * @return {*}
+ */
 const SequenceForm = () => {
   const { register, handleSubmit, reset } = useForm();
   let [results, setResults] = useState({});
@@ -16,6 +22,13 @@ const SequenceForm = () => {
     }
   });
 
+  /**
+   * onSubmit called when user clicks "Align Sequences" button. Calls alignSeqs
+   * function to perform sequence alignment, resets the form, and posts the results
+   * to the results history for the current sessionId.
+   *
+   * @param {*} data - Form data includes both sequences.
+   */
   const onSubmit = async (data) => {
     results = alignSeqs(data);
     setResults(results);
