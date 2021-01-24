@@ -12,15 +12,19 @@ Though this alignment tool can be used with any sequence drawn alphanumerically,
 
 Since the sequences may not be identical, alignments may include indel mutations (insertions or deletions) or substitutions. For instance, given the sequences GCTAATCCCGG and CATCATGGA, possible alignments could be:
 
+```
 GCTAATCCCGG-
 ||||||||||||
 ---CATCATGGA
+```
 
 or
 
+```
 GCTAATCCCGG
 |||||||||||
 -CATCATGGA-
+```
 
 Because the first requires fewer mutations, that is the best possible alignment.
 
