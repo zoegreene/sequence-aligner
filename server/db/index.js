@@ -5,8 +5,8 @@ const Alignment = require('./models/Alignment');
 Session.hasMany(Alignment);
 Alignment.belongsTo(Session);
 
-const syncDB = async () => {
-  await db.sync({ force: true });
+const syncDB = async (forceSeed = true) => {
+  await db.sync({ force: forceSeed });
 }
 
 module.exports = {
