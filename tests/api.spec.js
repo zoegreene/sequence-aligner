@@ -9,13 +9,14 @@ describe('Create a new session ID', () => {
     const response = await request(app).post('/api/sessions');
     expect(response.statusCode).toBe(201);
     sessionId = response.body.id;
+    console.log('session in first post', sessionId);
     expect(response.body.id).toBeTruthy;
   });
 });
 
-// POST /api/sessions/:sessionId/alignments
 describe('Create a new alignment', () => {
   let response;
+  console.log('session in post',sessionId);
   test('It should response the POST method with 201', async () => {
     const data = {
       seq1: 'abc',
@@ -32,3 +33,14 @@ describe('Create a new alignment', () => {
     expect(response.body.sessionId).toBe(sessionId);
   });
 });
+
+// GET /api/sessions/:sessionId/alignments
+// Retrieves the alignments history of a given sessionId.
+// describe('Get all alignments for a give sessionId', () => {
+//   let response;
+//   console.log(sessionId);
+//   test('It should response the GET method with 200', async () => {
+//     response = await request(app).get(`api/sessions/${sessionId}/alignments`);
+//     expect(response.statusCode).toBe(200);
+//   });
+// })

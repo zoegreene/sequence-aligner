@@ -2,6 +2,17 @@ const router = require('express').Router();
 const { Session, Alignment } = require('../db');
 const A_WEEK_IN_MSECONDS = 60 * 60 * 24 * 7 * 1000;
 
+// GET /api/sessions
+// Gets all sessions, used in test suite
+router.get('/', async (req, res, next) => {
+  try {
+    const results = await Session.findAll();
+    res.status(200).send(results);
+  } catch (err) {
+    next(err);
+  }
+});
+
 // POST /api/sessions
 // Creates a new sessionId and stores it in the browser's cookies.
 router.post('/', async (req, res, next) => {
