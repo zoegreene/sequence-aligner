@@ -10,7 +10,7 @@ https://sequence-aligner-wizard.herokuapp.com/
 Sequence alignment has a number of applications, including phylogenetic analysis, genome assembly, and NLP.
 Though this alignment tool can be used with any sequence drawn alphanumerically, in biology, we are interested in DNA or protein sequences. DNA sequences are represented by the letters A, C, T, and G for Adenine, Cytosine, Thymine, and Guanine while protein sequences contain representations of the 20 amino acids.
 
-Since the sequences may not be identical, alignments may include indel mutations (insertions or deletions) or substitutions. For instance, given the sequences GCTAATCCCGG and CATCATGGA, possible alignments could be:
+Since the sequences may not be identical, alignments may include indel mutations (insertions or deletions) or substitutions. For instance, given the sequences GCTAATCCCGG and CATCATGGA, possible alignments could include:
 
 ```
 GCTAATCCCGG-
@@ -26,14 +26,13 @@ GCTAATCCCGG
 -CATCATGGA-
 ```
 
-Because the first requires fewer mutations, that is the best possible alignment.
+Because the first requires fewer mutations, that is the better alignment.
 
 ## Installation & Set-Up
 To run this project locally:
 ```
 createdb sequence_aligner
 npm install
-
 ```
 
 NPM scripts:
