@@ -5,6 +5,7 @@ import React from 'react';
 import * as rrd from 'react-router-dom';
 import { shallow, configure, mount } from 'enzyme';
 import Adapter from "enzyme-adapter-react-16";
+import { expect } from '@jest/globals';
 
 configure({ adapter: new Adapter() });
 const { BrowserRouter } = rrd;
@@ -14,15 +15,25 @@ const { BrowserRouter } = rrd;
 // history component renders "no alignments" if empty
 
 describe('History component', () => {
+  const results = [{
+    seq1: 'abc',
+    seq2: 'abd',
+    newSeq: 'ab[c]',
+    match: 0.67,
+    numMutations: 1
+  }];
   it('Renders without crashing', () => {
     const wrapper = shallow(<History />);
   });
-  it('Renders the history', () => {
+  it('Shows no alignments found text when no history set', () => {
     const wrapper = mount(
       <BrowserRouter>
         <History />
       </BrowserRouter>
     );
+    expect(wrapper.text()).toContain('No alignments found');
+    // const currHist = jest.spyOn(React, 'useState');
+    // currHist.mockImplementation((setHistory) => setHistory(results));
   });
 });
 
