@@ -1,4 +1,4 @@
-const { expect } = require('@jest/globals');
+const { expect, afterAll } = require('@jest/globals');
 const request = require('supertest');
 const app = require('../server/index');
 
@@ -13,6 +13,10 @@ describe('Create a new session ID', () => {
 describe('Create a new alignment', () => {
   let response;
   let sessionId;
+
+  afterAll(() => {
+    app.close();
+  });
 
   test('It should response the POST method with 201', async () => {
     sessionId = await request(app).get('/api/sessions');
