@@ -2,18 +2,27 @@ import History from '../client/components/History';
 import ResultsCard from '../client/components/ResultsCard';
 import SequenceForm from '../client/components/SequenceForm';
 import React from 'react';
+import * as rrd from 'react-router-dom';
 import { shallow, configure, mount } from 'enzyme';
 import Adapter from "enzyme-adapter-react-16";
-import { expect, it } from '@jest/globals';
+
 configure({ adapter: new Adapter() });
+const { BrowserRouter } = rrd;
+
 
 // History component renders the alignments
 // history component renders "no alignments" if empty
-// renders <History /> at the route /history
 
 describe('History component', () => {
   it('Renders without crashing', () => {
     const wrapper = shallow(<History />);
+  });
+  it('Renders the history', () => {
+    const wrapper = mount(
+      <BrowserRouter>
+        <History />
+      </BrowserRouter>
+    );
   });
 });
 

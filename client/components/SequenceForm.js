@@ -15,10 +15,13 @@ const SequenceForm = () => {
   const { register, handleSubmit, reset } = useForm();
   let [results, setResults] = useState({});
 
-  useEffect( async () => {
+  useEffect( () => {
+    async function postData() {
+      await axios.post('/api/sessions');
+    }
     const sessionId = getCookieValue('sessionId');
     if (!sessionId) {
-      await axios.post('/api/sessions');
+      postData();
     }
   });
 

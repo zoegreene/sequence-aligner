@@ -13,13 +13,22 @@ import ResultsCard from './ResultsCard';
 const History = () => {
   let [history, setHistory] = useState([]);
 
-  useEffect( async () => {
-    const sessionId = getCookieValue('sessionId');
-    if (sessionId) {
+  useEffect( () => {
+    async function fetchData(sessionId) {
       const results = await axios.get(`/api/sessions/${sessionId}/alignments`);
       setHistory(results.data);
-    } else {
+    }
+
+    async function postData() {
       await axios.post('/api/sessions');
+    }
+
+    const sessionId = getCookieValue('sessionId');
+
+    if (sessionId) {
+      fetchData(sessionId);
+    } else {
+      postData();
     }
   }, [setHistory]);
 
